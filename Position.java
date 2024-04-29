@@ -1,4 +1,4 @@
 public class Position {
-    private int ligne;
-    private int colonne;
+    private int row;
+    private int col;
 }
