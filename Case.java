@@ -24,7 +24,7 @@ public class Case extends Plateau {
     }
 
     void afficherCase(){
-        Ecran.afficher(this.symbole)
+        Ecran.afficher(this.symbole);
     }
 
 }
