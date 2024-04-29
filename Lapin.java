@@ -1,3 +1,3 @@
-public class Lapin extends Personnage {
+public class Lapin extends Proies {
     
 }

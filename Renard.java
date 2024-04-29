@@ -1,3 +1,3 @@
-public class Renard extends Personnage {
+public class Renard extends Predateurs {
     
 }

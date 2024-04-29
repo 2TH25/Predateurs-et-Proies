@@ -1,3 +1,3 @@
-public class Chasseur extends Personnage {
+public class Chasseur extends Predateurs {
     
 }

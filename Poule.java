@@ -1,3 +1,3 @@
-public class Poule extends Personnage {
+public class Poule extends Proies {
     
 }

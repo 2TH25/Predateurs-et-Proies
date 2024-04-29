@@ -1,7 +1,3 @@
-public class Case {
-    
-    private boolean estVide ;
-    private Personnage perso ;
-
-    
+public class Case extends Plateau {
+       
 }
