@@ -19,8 +19,12 @@ public class Case extends Plateau {
     }
 
 
-    Position getPosition(){
+    String getPosition(){
         return this.position;
+    }
+
+    void afficherCase(){
+        Ecran.afficher(this.symbole)
     }
 
 }

@@ -18,4 +18,9 @@ public class Position {
     int getCol(){
         return this.col;
     }
+    
+    String PositiontoString(){
+        return "("+this.row+","+this.col+")";
+        
+    }
 }
