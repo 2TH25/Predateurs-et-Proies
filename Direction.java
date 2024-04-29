@@ -1,4 +1,4 @@
 public class Direction {
     private int rowDir;
-    private colDir;
+    private int colDir;
 }
