@@ -19,7 +19,7 @@ public class Case extends Plateau {
     }
 
 
-    String getPosition(){
+    Position getPosition(){
         return this.position;
     }
 
