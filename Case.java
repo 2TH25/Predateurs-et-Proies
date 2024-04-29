@@ -12,5 +12,15 @@ public class Case extends Plateau {
         this.position = position;
         this.symbole = ' ';
     }
-    
+
+    void setCase(Position position,char symbole){
+        this.position=position;
+        this.symbole=symbole;
+    }
+
+
+    Position getPosition(){
+        return this.position;
+    }
+
 }

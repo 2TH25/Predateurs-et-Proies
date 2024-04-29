@@ -7,12 +7,15 @@ public class Position {
         this.row=row;
     }
 
-    setPosition(int row,int col){
+    void setPosition(int row,int col){
         this.col=col;
         this.row=row;
     }
 
-    getPosition(){
-        return (this.row,this.col);
+    int getRow(){
+        return this.row;
+    }
+    int getCol(){
+        return this.col;
     }
 }
