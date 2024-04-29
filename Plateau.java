@@ -1,10 +1,10 @@
 public class Plateau {
-    private int colNumber;
     private int rowNumber;
+    private int colNumber;
  
     
 
-    Plateau(int colNumber, int rowNumber){
+    Plateau(int rowNumber, int colNumber){
         this.colNumber=colNumber;
         this.rowNumber=rowNumber;
     }
