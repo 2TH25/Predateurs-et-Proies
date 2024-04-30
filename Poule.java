@@ -1,3 +1,6 @@
 public class Poule extends Proies {
-    private int nombremax = 5;
+    
+    Poule (Position position){
+        super(position, 'P');
+    }
 }

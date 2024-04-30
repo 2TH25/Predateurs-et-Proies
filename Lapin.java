@@ -1,3 +1,6 @@
 public class Lapin extends Proies {
-    private int nombremax = 5;
+    
+    Lapin (Position position){
+        super(position, 'L');
+    }
 }

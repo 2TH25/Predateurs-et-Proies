@@ -1,3 +1,6 @@
 public class Chasseur extends Predateurs {
-    private int nombremax = 2;
+    
+    Chasseur (Position position){
+        super(position, 'C');
+    }
 }

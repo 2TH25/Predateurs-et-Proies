@@ -1,3 +1,6 @@
 public class Renard extends Predateurs {
-    private int nombremax = 3;
+    
+    Renard (Position position){
+        super(position, 'R');
+    }
 }
