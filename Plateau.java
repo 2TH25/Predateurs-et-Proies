@@ -41,4 +41,28 @@ public class Plateau {
         }
     }
 
+    void generationPlateau(){
+        for(int i=0;i<rowNumber;i++){
+            for(int j=0;i<colNumber;j++){
+                double x = (Math.random());
+                if (x>=0 && x<=0.25){
+                    x = 0;
+
+                }
+                else if (x>=0.25 && x<=0.5){
+                    x = 1;
+
+                }
+                else if (x>=0.5 && x<=0.75){
+                    x = 2;
+
+                }
+                else {
+                    x=3;
+                }
+                
+            }
+        }
+    }
+
 }

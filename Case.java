@@ -27,4 +27,6 @@ public class Case extends Plateau {
         Ecran.afficher(this.symbole);
     }
 
+    
+
 }
