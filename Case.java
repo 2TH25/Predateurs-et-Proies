@@ -9,11 +9,11 @@ public class Case extends Plateau {
     }
 
     Case (Position position){
-        this.position = position;
-        this.symbole = ' ';
+        this(position, ' ');
     }
 
-     public void setCase(Position position,char symbole){
+
+    public void setCase(Position position,char symbole){
         this.position=position;
         this.symbole=symbole;
     }

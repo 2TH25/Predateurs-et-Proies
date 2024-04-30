@@ -1,15 +1,18 @@
 public class Plateau {
+
     private int rowNumber;
     private int colNumber;
-    Case[][] plateau = new Case [rowNumber][colNumber];
+    Case[][] plateau;
  
     
 
     Plateau(int rowNumber, int colNumber){
         this.colNumber=colNumber;
         this.rowNumber=rowNumber;
+        this.plateau = new Case[rowNumber][colNumber];
 
     }
+
     Plateau(){
         this(8,8);
     }
@@ -35,32 +38,23 @@ public class Plateau {
         for(int i=0;i<this.rowNumber;i++){
             for(int j=0;j<this.colNumber;j++){
                 
-                Position position_temporaire = new Position(i,j);
-                this.getCase(position_temporaire).afficherCase();
+                this.plateau[i][j].afficherCase();
             }
         }
     }
 
     public void generationPlateau(){
-        for(int i=0;i<rowNumber;i++){
-            for(int j=0;j<colNumber;j++){
-                double x = (Math.random());
-                if (x>=0 && x<=0.25){
-                    x = 0;
+        
+        for(int i=0;i<rowNumber-1;i++){
+            for(int j=0;j<colNumber-1;j++){
 
+                Position position_temporaire = new Position(i, j);
+                if (i == 0 || i == rowNumber-1 || j == 0 || j == colNumber-1){
+                    
+                    this.plateau[i][j] = new Bordure(position_temporaire);
+                } else {
+                    this.plateau[i][j] = new Case(position_temporaire);
                 }
-                else if (x>=0.25 && x<=0.5){
-                    x = 1;
-
-                }
-                else if (x>=0.5 && x<=0.75){
-                    x = 2;
-
-                }
-                else {
-                    x=3;
-                }
-
             }
         }
     }
