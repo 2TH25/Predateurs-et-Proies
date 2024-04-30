@@ -35,20 +35,21 @@ public class Plateau {
     }
 
     public void afficherPlateau(){
-        for(int i=0;i<this.rowNumber-1;i++){
+        for(int i=0;i<this.rowNumber;i++){
             
-            for(int j=0;j<this.colNumber-1;j++){
+            for(int j=0;j<this.colNumber;j++){
                 
                 this.plateau[i][j].afficherCase();
+                Ecran.afficher(' ');
             }
             Ecran.sautDeLigne();
         }
     }
 
     public void generationPlateau(){
-        
-        for(int i=0;i<rowNumber-1;i++){
-            for(int j=0;j<colNumber-1;j++){
+
+        for(int i=0;i<rowNumber;i++){
+            for(int j=0;j< colNumber;j++){
 
                 Position position_temporaire = new Position(i, j);
                 if (i == 0 || i == rowNumber-1 || j == 0 || j == colNumber-1){
