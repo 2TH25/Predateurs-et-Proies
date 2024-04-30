@@ -13,20 +13,20 @@ public class Case extends Plateau {
         this.symbole = ' ';
     }
 
-    void setCase(Position position,char symbole){
+     public void setCase(Position position,char symbole){
         this.position=position;
         this.symbole=symbole;
     }
 
 
-    Position getPosition(){
+    public Position getPosition(){
         return this.position;
     }
 
-    void afficherCase(){
+    public void afficherCase(){
         Ecran.afficher(this.symbole);
     }
 
-    
+
 
 }

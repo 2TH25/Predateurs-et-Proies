@@ -14,24 +14,24 @@ public class Plateau {
         this(8,8);
     }
 
-    void setPlateau(int rowNumber,int colNumber){
+    public void setPlateau(int rowNumber,int colNumber){
         this.rowNumber=rowNumber;
         this.colNumber=colNumber;
         
     }
 
-    int getRowNumber(){
+    public int getRowNumber(){
         return this.rowNumber;
     }
-    int getColNumber(){
+    public int getColNumber(){
         return this.colNumber;
     }
-    Case getCase(Position position){
+    public Case getCase(Position position){
         return plateau[position.getRow()][position.getCol()]
 
     }
 
-    void afficherPlateau(){
+    public void afficherPlateau(){
         for(int i=0;i<this.rowNumber;i++){
             for(int j=0;j<this.colNumber;j++){
                 
@@ -41,7 +41,7 @@ public class Plateau {
         }
     }
 
-    void generationPlateau(){
+    public void generationPlateau(){
         for(int i=0;i<rowNumber;i++){
             for(int j=0;i<colNumber;j++){
                 double x = (Math.random());
@@ -60,7 +60,7 @@ public class Plateau {
                 else {
                     x=3;
                 }
-                
+
             }
         }
     }
