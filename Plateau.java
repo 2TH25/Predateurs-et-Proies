@@ -80,6 +80,9 @@ public class Plateau {
                             limite_entite_c = limite_entite_c-1;
                         }
                     }
+                    else{
+                        this.plateau[i][j] = new Case(position_temporaire);
+                    }
                     
                 }
             }
