@@ -22,6 +22,9 @@ public class Case extends Plateau {
     public Position getPosition(){
         return this.position;
     }
+    public char getSymbole(){
+        return this.symbole;
+    }
 
     public void afficherCase(){
         Ecran.afficher(this.symbole);

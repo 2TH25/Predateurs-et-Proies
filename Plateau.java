@@ -100,33 +100,32 @@ public class Plateau {
         while(limite_entite_c>0 || limite_entite_l>0  ||limite_entite_p>0 || limite_entite_r>0){
             int random_i = 1+ (int)(Math.random()*rowNumber-1);
             int random_j = 1+ (int)(Math.random()*colNumber-1);
-            for(int k=1;k<rowNumber-1;k++){
-                for(int l=1;l< colNumber-1;l++){
-                    Position position_temporaire = new Position(k, l);
-                    if(plateau[k][l].symbole==' '){
-                        while(plateau[k][l].symbole==' '){
+            
+                    Position position_temporaire = new Position(random_i, random_j);
+                    if(plateau[random_i][random_j].getSymbole()==' '){
+                        while(plateau[random_i][random_j].getSymbole()==' '){
                             double random = Math.random();
                             if(random>=0 && random<0.25&& 0<limite_entite_p){
-                                this.plateau[k][l] = new Poule(position_temporaire);
+                                this.plateau[random_i][random_j] = new Poule(position_temporaire);
                                 limite_entite_p = limite_entite_p-1;
                             }
                             else if(random>=0.25 && random<0.5 && 0<limite_entite_l){
-                                this.plateau[k][l] = new Lapin(position_temporaire);
+                                this.plateau[random_i][random_j] = new Lapin(position_temporaire);
                                 limite_entite_l = limite_entite_l-1;
                             }
                             else if(random>=0.5 && random<0.75 && 0<limite_entite_r){
-                                this.plateau[k][l] = new Renard(position_temporaire);
+                                this.plateau[random_i][random_j] = new Renard(position_temporaire);
                                 limite_entite_r = limite_entite_r-1;
                             }
                             else if(random>=0.75 && random<=1 && 0<limite_entite_c){
-                                this.plateau[k][l] = new Chasseur(position_temporaire);
+                                this.plateau[random_i][random_j] = new Chasseur(position_temporaire);
                                 limite_entite_c = limite_entite_c-1;
                             }
 
                         }
                     }
-                }
-            }
+                
+            
 
         }
     }
