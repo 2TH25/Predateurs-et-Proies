@@ -60,22 +60,25 @@ public class Plateau {
                     
                     this.plateau[i][j] = new Bordure(position_temporaire);
                 } else {
+                    double taux_apparition = Math.random();
                     double random = Math.random();
-                    if(random>=0 && random<0.25&& 0<limite_entite_p){
-                        this.plateau[i][j] = new Poule(position_temporaire);
-                        limite_entite_p = limite_entite_p-1;
-                    }
-                    else if(random>=0.25 && random<0.5 && 0<limite_entite_l){
-                        this.plateau[i][j] = new Lapin(position_temporaire);
-                        limite_entite_l = limite_entite_l-1;
-                    }
-                    else if(random>=0.5 && random<0.75 && 0<limite_entite_r){
-                        this.plateau[i][j] = new Renard(position_temporaire);
-                        limite_entite_r = limite_entite_r-1;
-                    }
-                    else if(random>=0.75 && random<=1 && 0<limite_entite_c){
-                        this.plateau[i][j] = new Chasseur(position_temporaire);
-                        limite_entite_c = limite_entite_c-1;
+                    if(taux_apparition<0.2&&taux_apparition>=0){
+                        if(random>=0 && random<0.25&& 0<limite_entite_p){
+                            this.plateau[i][j] = new Poule(position_temporaire);
+                            limite_entite_p = limite_entite_p-1;
+                        }
+                        else if(random>=0.25 && random<0.5 && 0<limite_entite_l){
+                            this.plateau[i][j] = new Lapin(position_temporaire);
+                            limite_entite_l = limite_entite_l-1;
+                        }
+                        else if(random>=0.5 && random<0.75 && 0<limite_entite_r){
+                            this.plateau[i][j] = new Renard(position_temporaire);
+                            limite_entite_r = limite_entite_r-1;
+                        }
+                        else if(random>=0.75 && random<=1 && 0<limite_entite_c){
+                            this.plateau[i][j] = new Chasseur(position_temporaire);
+                            limite_entite_c = limite_entite_c-1;
+                        }
                     }
                     
                 }
