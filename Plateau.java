@@ -130,4 +130,20 @@ public class Plateau {
         }
     }
 
+
+    public int nombreEntitesRestantes(){
+        int nombre_entites = 0;
+        for(int i=1;i<rowNumber-1;i++){
+            for(int j=1;j<colNumber-1;j++){
+                if(plateau[i][j].getSymbole()!=' '){
+                    nombre_entites=nombre_entites+1;
+                }
+
+            }
+        }
+        return nombre_entites;
+    }
+
+    
+
 }
