@@ -23,6 +23,10 @@ public class Personnage extends Case {
 
     }
 
+    public void interactionPolymorphe(){
+        
+    }
+
     public void interactionCase(Case entite){
         if(this.estEnInteraction()){
             int row=this.getPosition().getRow(),col=this.getPosition().getCol(),rowDir=this.getDirection().getRowDir(),colDir=this.getDirection().getColDir();
@@ -55,6 +59,10 @@ public class Personnage extends Case {
                     
 
                 }
+
+            }
+            else{
+                //ici on est en collision avec une entité
 
             }
 
