@@ -30,6 +30,10 @@ public class Case extends Plateau {
         Ecran.afficher(this.symbole);
     }
 
+    public void deplacement(){
+        this.deplacement();
+    }
+
 
     
 

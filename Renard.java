@@ -4,10 +4,10 @@ public class Renard extends Predateurs {
         super(position, 'R');
     }
 
-    public void interactionPolymorphe(Personnage entite){
+    public void interactionPolymorphe(Case entite){
         if(entite.getSymbole()=='C'||entite.getSymbole()=='R'){
             //mise en attente
-            this.getDirection().generatioDirection();
+            this.getDirection().generationDirection();
 
         }else{
             //l'entité(la case) est supprimée de la matrice plateau

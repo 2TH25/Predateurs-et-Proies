@@ -23,8 +23,8 @@ public class Personnage extends Case {
 
     }
 
-    public void interactionPolymorphe(){
-        
+    public void interactionPolymorphe(Case entite){
+        this.interactionPolymorphe(entite);
     }
 
     public void interactionCase(Case entite){
@@ -63,6 +63,7 @@ public class Personnage extends Case {
             }
             else{
                 //ici on est en collision avec une entité
+                this.interactionPolymorphe(entite);
 
             }
 
@@ -71,6 +72,13 @@ public class Personnage extends Case {
        
 
 
+    }
+    public void deplacement(){
+        plateau[this.getPosition().getRow()][this.getPosition().getCol()] = new Case(this.getPosition());
+        Position new_position = new Position(this.getRowNumber() + this.getDirection().getRowDir(), this.getColNumber() + this.getDirection().getColDir());
+        this.setCase(new_position, getSymbole());
+
+        
     }
 
 }

@@ -22,6 +22,9 @@ public class Plateau {
         this.colNumber=colNumber;
         
     }
+    public Case[][] getPlateau(){
+        return this.plateau;
+    }
 
     public int getRowNumber(){
         return this.rowNumber;

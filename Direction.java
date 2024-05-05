@@ -26,7 +26,7 @@ public class Direction {
     }
 
 
-    public void generatioDirection(){
+    public void generationDirection(){
         double random_row = Math.random();
         double random_col = Math.random();
         int colDir=0;
