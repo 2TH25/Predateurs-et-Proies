@@ -11,7 +11,12 @@ public class Renard extends Predateurs {
 
         }else{
             //l'entité(la case) est supprimée de la matrice plateau
+            int ligne = entite.getPosition().getRow();
+            int colonne = entite.getPosition().getCol();
+            Position pos_temporaire = new Position(ligne,colonne);
+            this.plateau[ligne][colonne] = new Case(pos_temporaire);
+
         }
         
-}
+    }
 }
