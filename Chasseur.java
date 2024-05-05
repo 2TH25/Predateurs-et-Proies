@@ -7,7 +7,7 @@ public class Chasseur extends Predateurs {
 
 
     public void interactionPolymorphe(Personnage entite){
-        if(entite.getSymbole()=='C'||entite.getSymbole()=='R'){
+        if(entite.getSymbole()=='C'||entite.getSymbole()=='P'){
             //mise en attente
             this.getDirection().generatioDirection();
 
