@@ -20,6 +20,7 @@ public class Chasseur extends Predateurs {
             int colonne = entite.getPosition().getCol();
             Position pos_temporaire = new Position(ligne,colonne);
             this.plateau[ligne][colonne] = new Case(pos_temporaire);
+            this.setPosition(ligne+this.getDirection().getRowDir(),colonne+this.getDirection().getColDir());
 
         }
         

@@ -18,6 +18,10 @@ public class Case extends Plateau {
         this.symbole=symbole;
     }
 
+    public void setPosition(int row,int col){
+        Ecran.afficher("Erreur de setPosition dans la classe Case");
+    }
+
 
     public Position getPosition(){
         return this.position;
