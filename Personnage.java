@@ -5,6 +5,7 @@ public class Personnage extends Case {
     Personnage (Position position ,char symbole){
         super(position, symbole);
         this.direction = new Direction();
+        this.getDirection().generationDirection();
     }
 
     public Direction getDirection(){

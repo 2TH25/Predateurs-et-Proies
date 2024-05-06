@@ -27,11 +27,17 @@ public class Case extends Plateau {
     }
 
     public void afficherCase(){
-        Ecran.afficher(this.symbole);
+        Ecran.afficher("Erreur, l'affichage de case ne fonctionne pas");
     }
 
     public void deplacement(){
         this.deplacement();
+    }
+    public void interactionCase(Case entite){
+        Ecran.afficher("Erreur, méthode interactionCase appelée sur un non-Personnage");
+    }
+    public Direction getDirection(){
+        return this.getDirection();
     }
 
 

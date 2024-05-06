@@ -3,6 +3,9 @@ public class Poule extends Proies {
     Poule (Position position){
         super(position, 'P');
     }
+    public void afficherCase(){
+        Ecran.afficher('P');
+    }
 
 
     public void interactionPolymorphe(Case entite){
