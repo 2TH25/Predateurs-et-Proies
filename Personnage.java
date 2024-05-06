@@ -20,6 +20,7 @@ public class Personnage extends Case {
             return true;
         }else{
             return false;
+            
         }
 
     }
@@ -34,7 +35,7 @@ public class Personnage extends Case {
             int temp=row+rowDir;
             int temp2=col+colDir;
             if(this.plateau[temp][temp2].getSymbole()!='X'){
-                //faire attendre
+                
                 if(rowDir==0){
                     colDir = -colDir;
                 }
@@ -69,6 +70,9 @@ public class Personnage extends Case {
             }
 
 
+        }
+        else{
+            
         }
        
 
