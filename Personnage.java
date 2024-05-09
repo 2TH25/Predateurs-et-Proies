@@ -83,6 +83,7 @@ public class Personnage extends Case {
         Position new_position = new Position(this.getRowNumber() + this.getDirection().getRowDir(), this.getColNumber() + this.getDirection().getColDir());
         this.setCase(new_position, getSymbole());
         this.deplacement();
+        this.interactionPolymorphe(entite);
 
         
     }
