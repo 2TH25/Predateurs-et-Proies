@@ -66,6 +66,7 @@ public class Personnage extends Case {
             else{
                 //ici on est en collision avec une entité
                 this.interactionPolymorphe(entite);
+                this.deplacement();
 
             }
 
