@@ -138,7 +138,7 @@ public class Plateau {
         int nombre_entites = 0;
         for(int i=1;i<rowNumber-1;i++){
             for(int j=1;j<colNumber-1;j++){
-                if(plateau[i][j].getSymbole()!=' '){
+                if(plateau[i][j].getSymbole()!='C' || plateau[i][j].getSymbole()!='R' || plateau[i][j].getSymbole()!='P' || plateau[i][j].getSymbole()!='L'){
                     nombre_entites=nombre_entites+1;
                 }
 
