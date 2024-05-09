@@ -4,6 +4,6 @@ public class Bordure extends Case {
         super(position,'X');
     }
     public void afficherCase(){
-        Ecran.afficher(' ');
+        Ecran.afficher('X');
     }
 }
