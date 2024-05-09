@@ -82,6 +82,7 @@ public class Personnage extends Case {
         plateau[this.getPosition().getRow()][this.getPosition().getCol()] = new Case(this.getPosition());
         Position new_position = new Position(this.getRowNumber() + this.getDirection().getRowDir(), this.getColNumber() + this.getDirection().getColDir());
         this.setCase(new_position, getSymbole());
+        bonsoir;
 
         
     }
