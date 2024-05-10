@@ -4,7 +4,6 @@ public class Personnage extends Case {
 
     Personnage (Position position ,char symbole){
         super(position, symbole);
-        this.direction = new Direction();
         this.getDirection().generationDirection();
     }
 
@@ -84,10 +83,13 @@ public class Personnage extends Case {
 
     }
     public void deplacement(){
-        if(this.getPosition().getRow()+this.getRowNumber()<=this.getRowNumber()||this.getPosition().getCol()+this.getColNumber()<=this.getColNumber()){
-            plateau[this.getPosition().getRow()][this.getPosition().getCol()] = new Case(this.getPosition());
-            Position new_position = new Position(getPosition().getRow() + this.getDirection().getRowDir(), this.getPosition().getCol() + this.getDirection().getColDir());
-            this.setCase(new_position, getSymbole());
+        if(this.getSymbole()!=' '){
+
+            if(this.getPosition().getRow()+this.getRowNumber()<=this.getRowNumber()||this.getPosition().getCol()+this.getColNumber()<=this.getColNumber()){
+                plateau[this.getPosition().getRow()][this.getPosition().getCol()] = new Case(this.getPosition());
+                Position new_position = new Position(getPosition().getRow() + this.getDirection().getRowDir(), this.getPosition().getCol() + this.getDirection().getColDir());
+                this.setCase(new_position, getSymbole());
+            }
         }
 
         

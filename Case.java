@@ -35,7 +35,7 @@ public class Case extends Plateau {
     }
 
     public void afficherCase(){
-        Ecran.afficher(this.getSymbole());
+        Ecran.afficher(' ');
     }
 
     public void deplacement(){
