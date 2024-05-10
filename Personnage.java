@@ -1,5 +1,5 @@
 public class Personnage extends Case {
-    private Case case ;
+    private Case case_identifier ;
     
     
 
