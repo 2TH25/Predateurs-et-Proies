@@ -1,10 +1,12 @@
 public class Personnage extends Case {
+    private Case case ;
     
     
 
     Personnage (Position position ,char symbole){
         super(position, symbole);
         this.getDirection().generationDirection();
+
     }
 
   
