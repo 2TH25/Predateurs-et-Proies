@@ -1,7 +1,7 @@
 public class Renard extends Predateurs {
   
-    Renard (Position position){
-        super(position, 'R');
+    Renard (Position position,Plateau plateau){
+        super(position, 'R',plateau);
     }
     public void afficherCase(){
         Ecran.afficher('R');
@@ -14,9 +14,7 @@ public class Renard extends Predateurs {
 
         }else{
             //l'entité(la case) est supprimée de la matrice plateau
-            this.plateau[entite.getPosition().getRow()][entite.getPosition().getCol()] = null;
-            this.plateau[entite.getPosition().getRow()][entite.getPosition().getCol()] = new Case( this.plateau[entite.getPosition().getRow()][entite.getPosition().getCol()].getPosition());
-            this.setPosition(entite.getPosition().getRow(),entite.getPosition().getCol());
+            this.tuerEntite(entite);
 
         }
         

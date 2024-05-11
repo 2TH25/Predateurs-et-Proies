@@ -7,11 +7,6 @@ public class Position {
         this.row=row;
     }
 
-    public void setPosition(int row,int col){
-        this.col=col;
-        this.row=row;
-    }
-
     public int getRow(){
         return this.row;
     }

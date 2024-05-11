@@ -1,7 +1,7 @@
 public class Poule extends Proies {
     
-    Poule (Position position){
-        super(position, 'P');
+    Poule (Position position,Plateau plateau){
+        super(position, 'P',plateau);
     }
     public void afficherCase(){
         Ecran.afficher('P');

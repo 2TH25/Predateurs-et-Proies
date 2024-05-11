@@ -1,7 +1,7 @@
 public class Chasseur extends Predateurs {
     
-    Chasseur (Position position){
-        super(position, 'C');
+    Chasseur (Position position,Plateau plateau){
+        super(position,'C',plateau);
     }
     public void afficherCase(){
         Ecran.afficher('C');
@@ -16,9 +16,7 @@ public class Chasseur extends Predateurs {
 
         }else{
             //l'entité(la case) est supprimée de la matrice plateau
-            this.plateau[entite.getPosition().getRow()][entite.getPosition().getCol()] = null;
-            this.plateau[entite.getPosition().getRow()][entite.getPosition().getCol()] = new Case( this.plateau[entite.getPosition().getRow()][entite.getPosition().getCol()].getPosition());
-            this.setPosition(entite.getPosition().getRow(),entite.getPosition().getCol());
+            this.tuerEntite(entite);
 
         }
         

@@ -1,7 +1,7 @@
 public class Lapin extends Proies {
     
-    Lapin (Position position){
-        super(position, 'L');
+    Lapin (Position position,Plateau plateau){
+        super(position, 'L', plateau);
     }
     public void afficherCase(){
         Ecran.afficher('L');

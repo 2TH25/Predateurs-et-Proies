@@ -1,19 +1,32 @@
-public class Case extends Plateau {
+public class Case {
     Direction direction;
     private Position position ;
     private char symbole;
+    private Plateau plateau;
 
-    Case (Position position, char symbole) {
+
+    Case (Position position, char symbole, Plateau plateau) {
         this.position = position;
         this.symbole = symbole;
         this.direction = new Direction();
+        this.plateau=plateau;
     }
 
-    Case (Position position){
-        this(position, ' ');
+    Case (Position position,Plateau plateau){
+        this(position, ' ',plateau);
     }
     public Direction getDirection(){
         return this.direction;
+    }
+    public Plateau getPlateauType(){
+        return this.plateau;
+    }
+    public Case getCase_id(){
+        return null;
+
+    }
+    public void setDirection(Direction direction){
+        this.direction=direction;
     }
 
 
@@ -22,8 +35,12 @@ public class Case extends Plateau {
         this.symbole=symbole;
     }
 
-    public void setPosition(int row,int col){
-        Ecran.afficherln("Erreur de setPosition dans la classe Case");
+    public void setPosition(Position position){
+        this.position=position;
+        
+    }
+    public void redirection(Case entite){
+        
     }
 
 
