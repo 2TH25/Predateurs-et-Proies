@@ -31,29 +31,31 @@ public class Direction {
         double random_col = Math.random();
         int colDir=0;
         int rowDir=0;
-        if(random_row >=0 && random_row<0.33){
-            rowDir=-1;
+        while(rowDir==0&&colDir==0){
+            if(random_row >=0 && random_row<0.33){
+                rowDir=-1;
 
-        }
-        if(random_row >=0.33 && random_row<0.66){
-            rowDir=0;
+            }
+            if(random_row >=0.33 && random_row<0.66){
+                rowDir=0;
 
-        }
-        if(random_row >=.66 && random_row<=1){
-            rowDir=1;
+            }
+            if(random_row >=.66 && random_row<=1){
+                rowDir=1;
 
-        }
-        if(random_col >=0 && random_col<0.33){
-            colDir=-1;
+            }
+            if(random_col >=0 && random_col<0.33){
+                colDir=-1;
 
-        }
-        if(random_col >=0.33 && random_col<0.66){
-            colDir=0;
+            }
+            if(random_col >=0.33 && random_col<0.66){
+                colDir=0;
 
-        }
-        if(random_col >=0.66 && random_col<=1){
-            colDir=1;
+            }
+            if(random_col >=0.66 && random_col<=1){
+                colDir=1;
 
+            }
         }
         setDirection(rowDir, colDir);
     }

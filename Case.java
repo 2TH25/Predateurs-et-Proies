@@ -1,5 +1,5 @@
 public class Case {
-    Direction direction;
+    private Direction direction;
     private Position position ;
     private char symbole;
     private Plateau plateau;
