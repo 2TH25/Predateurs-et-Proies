@@ -13,12 +13,21 @@ public class Main {
             for(int j = 0 ; j<PlateauDeJeu.getColNumber()-1 ; j++){
                 if(PlateauDeJeu.getPlateau()[i][j].getSymbole()!='X'&& PlateauDeJeu.getPlateau()[i][j].getSymbole()!=' '){
                     PlateauDeJeu.getPlateau()[i][j].interactionFinale(PlateauDeJeu.getPlateau()[ i + PlateauDeJeu.getPlateau()[i][j].getDirection().getRowDir()][ j + PlateauDeJeu.getPlateau()[i][j].getDirection().getColDir()]);
-                    PlateauDeJeu.getPlateau()[i][j].setAgi(false);
+                    
 
                 }
 
             }
         }
+        for(int k = 1; k<PlateauDeJeu.getRowNumber()-1 ; k++){
+            for(int l = 1 ; l<PlateauDeJeu.getColNumber()-1 ; l++){
+                if(PlateauDeJeu.getPlateau()[k][l].getSymbole()!='X'&& PlateauDeJeu.getPlateau()[k][l].getSymbole()!=' '){
+                    PlateauDeJeu.getPlateau()[k][l].setAgi(false);
+                }
+            }
+        }
+
+
         try {
             Thread.sleep(2000);}
             
