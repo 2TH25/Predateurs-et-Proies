@@ -16,8 +16,6 @@ public class Personnage extends Case {
         int row=this.getPosition().getRow() , col=this.getPosition().getCol() , rowDir=this.getDirection().getRowDir() , colDir=this.getDirection().getColDir();
         int temp=row+rowDir;
         int temp2=col+colDir;
-        int ligne_plateau=this.getPlateauType().getRowNumber(),colonne_plateau=this.getPlateauType().getColNumber();
-        if(temp<ligne_plateau && temp>0 &&temp2<colonne_plateau && temp2 >0){
             if(this.getPlateauType().getPlateau()[temp][temp2]!=null){
                 if(this.getPlateauType().getPlateau()[temp][temp2].getSymbole()!=' '){
                     return true;
@@ -27,7 +25,7 @@ public class Personnage extends Case {
                     
                 }
             }
-        }return false;
+        return false;
     
 
     }
@@ -55,7 +53,7 @@ public class Personnage extends Case {
 
             }
             else{
-                //ici on est en collision avec une entité
+                //ici on est en collision avec un personnage
                 this.interactionPolymorphe(entite);
                 
 
@@ -64,7 +62,7 @@ public class Personnage extends Case {
 
         }
         else{
-            if(ligne_cible<=this.getPlateauType().getRowNumber() && ligne_cible>0 &&colonne_cible<=this.getPlateauType().getColNumber() && colonne_cible>0){
+            if(ligne_cible<=this.getPlateauType().getRowNumber()-1 && ligne_cible>0 &&colonne_cible<=this.getPlateauType().getColNumber()-1 && colonne_cible>0){
                 this.deplacement();
             }
         }

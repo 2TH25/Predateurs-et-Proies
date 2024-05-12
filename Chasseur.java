@@ -11,7 +11,6 @@ public class Chasseur extends Predateurs {
 
     public void interactionPolymorphe(Case entite){
         if(entite.getSymbole()=='C'||entite.getSymbole()=='P'){
-            //mise en attente
             this.getDirection().generationDirection();
 
         }else{

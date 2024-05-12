@@ -59,10 +59,10 @@ public class Plateau {
     }
 
     public void generationPlateau(){
-        int limite_entite_p = 3;
-        int limite_entite_l = 3;
-        int limite_entite_r = 3;
-        int limite_entite_c = 3;
+        int limite_entite_p = 2;
+        int limite_entite_l = 2;
+        int limite_entite_r = 2;
+        int limite_entite_c = 2;
 
         for(int i=0;i<rowNumber;i++){
             for(int j=0;j< colNumber;j++){
@@ -145,8 +145,8 @@ public class Plateau {
 
     public int nombreEntitesRestantes(){
         int nombre_entites = 0;
-        for(int i=1;i<rowNumber-1;i++){
-            for(int j=1;j<colNumber-1;j++){
+        for(int i=1;i<rowNumber;i++){
+            for(int j=1;j<colNumber;j++){
                 if(plateau[i][j].getSymbole()!='C' || plateau[i][j].getSymbole()!='R' || plateau[i][j].getSymbole()!='P' || plateau[i][j].getSymbole()!='L'){
                     nombre_entites=nombre_entites+1;
                 }

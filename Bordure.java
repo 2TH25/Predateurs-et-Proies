@@ -8,17 +8,19 @@ public class Bordure extends Case {
     }
 
     public void redirection(Case entite){
-        if(entite.getPosition().getRow()==this.getPosition().getRow()+1||entite.getPosition().getRow()==this.getPosition().getRow()-1){
-            Ecran.afficherln("l'entité est en bas ou en haut");
-            Direction nouvelle_direction = new Direction(-entite.getDirection().getRowDir(),entite.getDirection().getColDir());
-            entite.setDirection(nouvelle_direction);  
-            entite.afficherDirection();
+        Position posx = new Position(entite.getPosition().getRow()+entite.getDirection().getRowDir(), entite.getPosition().getCol());
+        Position posy = new Position(entite.getPosition().getRow(), entite.getPosition().getCol()+entite.getDirection().getColDir());
+        if(entite.getAgi()!=true){
+
+        if(this.getPosition().getRow()==posy.getRow()&&posy.getRow()!=0){
+            entite.getDirection().setDirection(entite.getDirection().getRowDir(), -entite.getDirection().getColDir());
+            entite.setAgi(true);
         }
-        else if(entite.getPosition().getCol()==this.getPosition().getCol()+1||entite.getPosition().getCol()==this.getPosition().getCol()-1) {
-            Ecran.afficherln("l'entité est à droite ou à gauche");
-            Direction nouvelle_direction = new Direction(entite.getDirection().getRowDir(),-entite.getDirection().getColDir());
-            entite.setDirection(nouvelle_direction);  
-            entite.afficherDirection();
+        else if(this.getPosition().getRow()==posx.getRow()&&posx.getCol()!=0){
+            entite.getDirection().setDirection(-entite.getDirection().getRowDir(),entite.getDirection().getColDir());
+            entite.setAgi(true);
         }
+    }
+        
     }
 }

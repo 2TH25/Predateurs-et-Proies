@@ -9,8 +9,8 @@ public class Poule extends Proies {
 
 
     public void interactionPolymorphe(Case entite){
-            //mise en attente
-            this.getDirection().setDirection(-this.getDirection().getRowDir(),-this.getDirection().getColDir());
+            Direction new_direction = new Direction(-this.getDirection().getRowDir(),-this.getDirection().getColDir());
+            this.setDirection(new_direction);
     }
     
 }

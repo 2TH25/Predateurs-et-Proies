@@ -3,6 +3,7 @@ public class Case {
     private Position position ;
     private char symbole;
     private Plateau plateau;
+    private boolean a_deja_agi = false;
 
 
     Case (Position position, char symbole, Plateau plateau) {
@@ -24,6 +25,12 @@ public class Case {
     public Case getCase_id(){
         return null;
 
+    }
+    public boolean getAgi(){
+        return this.a_deja_agi;
+    }
+    public void setAgi(boolean bool){
+        this.a_deja_agi=bool;
     }
     public void setDirection(Direction direction){
         this.direction=direction;
@@ -62,7 +69,7 @@ public class Case {
         Ecran.afficherln("Erreur, méthode interactionCase appelée sur un non-Personnage");
     }
     public void afficherDirection(){
-        Ecran.afficher(this.getDirection().getRowDir(),this.getDirection().getColDir());
+        Ecran.afficherln("(",this.getDirection().getRowDir()," ," ,this.getDirection().getColDir(),")");
     }
   
 
