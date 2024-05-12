@@ -12,7 +12,7 @@ public class Main {
         for(int i = 0; i<PlateauDeJeu.getRowNumber()-1 ; i++){
             for(int j = 0 ; j<PlateauDeJeu.getColNumber()-1 ; j++){
                 if(PlateauDeJeu.getPlateau()[i][j].getSymbole()!='X'&& PlateauDeJeu.getPlateau()[i][j].getSymbole()!=' '){
-                    PlateauDeJeu.getPlateau()[i][j].interactionCase(PlateauDeJeu.getPlateau()[ i + PlateauDeJeu.getPlateau()[i][j].getDirection().getRowDir()][ j + PlateauDeJeu.getPlateau()[i][j].getDirection().getColDir()]);
+                    PlateauDeJeu.getPlateau()[i][j].interactionFinale(PlateauDeJeu.getPlateau()[ i + PlateauDeJeu.getPlateau()[i][j].getDirection().getRowDir()][ j + PlateauDeJeu.getPlateau()[i][j].getDirection().getColDir()]);
                     PlateauDeJeu.getPlateau()[i][j].setAgi(false);
 
                 }
@@ -20,7 +20,7 @@ public class Main {
             }
         }
         try {
-            Thread.sleep(5000);}
+            Thread.sleep(2000);}
             
             catch(Exception e) {
                 Ecran.afficherln("Quelque chose ne va pas, le catch a été utilisé");

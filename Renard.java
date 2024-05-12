@@ -8,15 +8,38 @@ public class Renard extends Predateurs {
     }
 
     public void interactionPolymorphe(Case entite){
+        if(!this.getAgi()){
         if(entite.getSymbole()=='C'||entite.getSymbole()=='R'){
             //mise en attente
             this.getDirection().generationDirection();
+            this.setAgi(true);
 
         }else{
             //l'entité(la case) est supprimée de la matrice plateau
             this.tuerEntite(entite);
+            this.setAgi(true);
 
         }
+    }
         
+    }
+
+    public void interactionFinale(Case entite){
+        if(!this.getAgi()){
+            if(entite.getSymbole()!=' '&&entite.getSymbole()!='X'){
+                if(entite.getSymbole()=='C'||entite.getSymbole()=='R'){
+                    //mise en attente
+                    this.getDirection().generationDirection();
+                    this.setAgi(true);
+                }else{
+                    //l'entité(la case) est supprimée de la matrice plateau
+                    this.tuerEntite(entite);
+                    this.setAgi(true);
+                }
+            }
+            else{
+                entite.redirection(this);
+            }
+        }
     }
 }

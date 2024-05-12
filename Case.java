@@ -35,6 +35,28 @@ public class Case {
     public void setDirection(Direction direction){
         this.direction=direction;
     }
+    public void setCase_id(Case cases){
+        
+    }
+    public void interactionFinale(Case entite){
+
+    }
+    public void redirection(Case entite){
+        if(!entite.getAgi()){
+        Position position_cible = new Position(this.getPosition().getRow(),this.getPosition().getCol());
+        Case case_cible = new Case(position_cible,this.getPlateauType());
+        entite.getPlateauType().retirerCase(entite);
+        entite.getPlateauType().ajouterCase(entite.getCase_id());
+        entite.getPlateauType().retirerCase(case_cible);
+        entite.setCase_id(case_cible);
+        entite.setPosition(case_cible.getPosition());
+        entite.getPlateauType().ajouterCase(entite);
+        entite.setAgi(true);
+            
+        
+        }
+     
+}
 
 
     public void setCase(Position position,char symbole){
@@ -44,9 +66,6 @@ public class Case {
 
     public void setPosition(Position position){
         this.position=position;
-        
-    }
-    public void redirection(Case entite){
         
     }
 

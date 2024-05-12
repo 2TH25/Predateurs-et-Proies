@@ -59,10 +59,10 @@ public class Plateau {
     }
 
     public void generationPlateau(){
-        int limite_entite_p = 2;
-        int limite_entite_l = 2;
-        int limite_entite_r = 2;
-        int limite_entite_c = 2;
+        int limite_entite_p = 3;
+        int limite_entite_l = 3;
+        int limite_entite_r = 3;
+        int limite_entite_c = 3;
 
         for(int i=0;i<rowNumber;i++){
             for(int j=0;j< colNumber;j++){
