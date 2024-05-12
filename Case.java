@@ -61,6 +61,9 @@ public class Case {
     public void interactionCase(Case entite){
         Ecran.afficherln("Erreur, méthode interactionCase appelée sur un non-Personnage");
     }
+    public void afficherDirection(){
+        Ecran.afficher(this.getDirection().getRowDir(),this.getDirection().getColDir());
+    }
   
 
     

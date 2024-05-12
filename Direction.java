@@ -59,4 +59,6 @@ public class Direction {
         }
         setDirection(rowDir, colDir);
     }
+
+    
 }
