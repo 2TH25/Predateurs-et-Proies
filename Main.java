@@ -4,6 +4,7 @@ public class Main {
         Plateau PlateauDeJeu = new Plateau(9,9);
         PlateauDeJeu.generationPlateau();
         PlateauDeJeu.afficherPlateau();
+        int tours_effectues=0;
 
 
     //boucle de jeu principale
@@ -24,6 +25,9 @@ public class Main {
                     if(PlateauDeJeu.getPlateau()[k][l].getSymbole()!='X'&& PlateauDeJeu.getPlateau()[k][l].getSymbole()!=' '){
                         PlateauDeJeu.getPlateau()[k][l].setAgi(false);
                     }
+                    if(tours_effectues%3==0&&PlateauDeJeu.getPlateau()[k][l].getLongueur_herbe()<=2){
+                        PlateauDeJeu.getPlateau()[k][l].setLongueur_herbe(PlateauDeJeu.getPlateau()[k][l].getLongueur_herbe()+1);
+                    }
                 }
             }
 
@@ -37,7 +41,7 @@ public class Main {
                 finally {
                     Ecran.afficherln("Mise en attente bien réalisée");
                 }
-        
+            tours_effectues=tours_effectues+1;
             PlateauDeJeu.afficherPlateau();
         }
 

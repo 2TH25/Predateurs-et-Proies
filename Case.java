@@ -4,6 +4,7 @@ public class Case {
     private char symbole;
     private Plateau plateau;
     private boolean a_deja_agi = false;
+    private int longueur_herbe;
 
 
     Case (Position position, char symbole, Plateau plateau) {
@@ -11,6 +12,7 @@ public class Case {
         this.symbole = symbole;
         this.direction = new Direction();
         this.plateau=plateau;
+        this.longueur_herbe=0;
     }
 
     Case (Position position,Plateau plateau){
@@ -32,6 +34,14 @@ public class Case {
     public void setAgi(boolean bool){
         this.a_deja_agi=bool;
     }
+
+    public int getLongueur_herbe(){
+        return this.longueur_herbe;
+    }
+    public void setLongueur_herbe(int longueur_herbe){
+        this.longueur_herbe=longueur_herbe;
+    }
+
     public void setDirection(Direction direction){
         this.direction=direction;
     }
@@ -74,7 +84,21 @@ public class Case {
     }
 
     public void afficherCase(){
-        Ecran.afficher(' ');
+        if(this.longueur_herbe<4&&this.longueur_herbe>=0){
+            if(this.longueur_herbe==0){
+                Ecran.afficher(' ');
+            }
+            if(this.longueur_herbe==1){
+                Ecran.afficher(' ');
+            }
+            if(this.longueur_herbe==2){
+                Ecran.afficher(' ');
+            }
+            if(this.longueur_herbe==3){
+                Ecran.afficher(' ');
+            }
+        }
+        
     }
     
     public void afficherDirection(){
