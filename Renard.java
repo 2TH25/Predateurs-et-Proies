@@ -23,4 +23,8 @@ public class Renard extends Predateurs {
             }
         }
     }
+    public void applatir(Case cases){
+        cases.setLongueur_herbe(getLongueur_herbe()-1);
+            
+    }
 }

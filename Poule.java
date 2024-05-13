@@ -19,5 +19,8 @@ public class Poule extends Proies {
             }
         }
     }
+    public void herbeTropHaute(){
+        this.setAgi(true);
+    }
     
 }

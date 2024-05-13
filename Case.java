@@ -54,11 +54,13 @@ public class Case {
 
     }
     public void redirection(Case entite){
+        entite.herbeTropHaute();
         if(!entite.getAgi()){
         Position position_cible = new Position(this.getPosition().getRow(),this.getPosition().getCol());
         Case case_cible = new Case(position_cible,this.getPlateauType());
         entite.getPlateauType().retirerCase(entite);
         entite.getPlateauType().ajouterCase(entite.getCase_id());
+        entite.applatir(case_cible);
         entite.getPlateauType().retirerCase(case_cible);
         entite.setCase_id(case_cible);
         entite.setPosition(case_cible.getPosition());
@@ -66,7 +68,14 @@ public class Case {
         entite.setAgi(true);
         }
      
-}
+    }
+    public void herbeTropHaute(){
+
+    }
+
+    public void applatir(Case cases){
+
+    }
 
     public void setCase(Position position,char symbole){
         this.position=position;
