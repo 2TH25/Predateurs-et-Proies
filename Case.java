@@ -52,9 +52,6 @@ public class Case {
         entite.setPosition(case_cible.getPosition());
         entite.getPlateauType().ajouterCase(entite);
         entite.setAgi(true);
-        entite.afficherDirection();
-            
-        
         }
      
 }

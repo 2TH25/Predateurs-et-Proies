@@ -79,8 +79,8 @@ public class Plateau {
         int limite_entite_r = 3;
         int limite_entite_c = 3;
 
-        for(int i=0;i<rowNumber;i++){
-            for(int j=0;j< colNumber;j++){
+        for(int i=1;i<rowNumber-1;i++){
+            for(int j=1;j< colNumber-1;j++){
 
                 Position position_temporaire = new Position(i, j);
                 double taux_apparition = Math.random();
@@ -118,8 +118,8 @@ public class Plateau {
         }
         
         while(limite_entite_c>0 || limite_entite_l>0  ||limite_entite_p>0 || limite_entite_r>0){
-            int random_i = 1+ (int)(Math.random()*rowNumber-1);
-            int random_j = 1+ (int)(Math.random()*colNumber-1);
+            int random_i = 1+ (int)(Math.random()*rowNumber-2);
+            int random_j = 1+ (int)(Math.random()*colNumber-2);
             
                     Position position_temporaire = new Position(random_i, random_j);
                     if(plateau[random_i][random_j].getSymbole()==' '){
@@ -153,9 +153,6 @@ public class Plateau {
 
                         }
                     }
-                
-            
-
         }
     }
 
