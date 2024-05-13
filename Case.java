@@ -16,7 +16,9 @@ public class Case {
     }
 
     Case (Position position,Plateau plateau){
-        this(position, ' ',plateau);
+        this.position=position;
+        this.plateau=plateau;
+        this.longueur_herbe=0;
     }
     public Direction getDirection(){
         return this.direction;
