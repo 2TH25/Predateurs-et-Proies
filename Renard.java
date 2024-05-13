@@ -10,7 +10,6 @@ public class Renard extends Predateurs {
         if(!this.getAgi()){
             if(entite.getSymbole()!=' '&&entite.getSymbole()!='X'){
                 if(entite.getSymbole()=='C'||entite.getSymbole()=='R'){
-                    //mise en attente
                     this.getDirection().generationDirection();
                     this.setAgi(true);
                 }else{

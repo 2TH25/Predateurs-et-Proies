@@ -9,9 +9,8 @@ public class Chasseur extends Predateurs {
     
     public void interactionFinale(Case entite){
         if(!this.getAgi()){
-            if(entite.getSymbole()!=' '&&entite.getSymbole()!='X'){
+            if(entite.getSymbole()!=' '&& entite.getSymbole()!='X'){
                 if(entite.getSymbole()=='C'||entite.getSymbole()=='P'){
-                    //mise en attente
                     this.getDirection().generationDirection();
                     this.setAgi(true);
         

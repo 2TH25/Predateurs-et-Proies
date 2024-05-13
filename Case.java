@@ -59,7 +59,6 @@ public class Case {
      
 }
 
-
     public void setCase(Position position,char symbole){
         this.position=position;
         this.symbole=symbole;
@@ -69,7 +68,6 @@ public class Case {
         this.position=position;
         
     }
-
 
     public Position getPosition(){
         return this.position;
@@ -81,13 +79,7 @@ public class Case {
     public void afficherCase(){
         Ecran.afficher(' ');
     }
-
-    public void deplacement(){
-        this.deplacement();
-    }
-    public void interactionCase(Case entite){
-        Ecran.afficherln("Erreur, méthode interactionCase appelée sur un non-Personnage");
-    }
+    
     public void afficherDirection(){
         Ecran.afficherln("(",this.getDirection().getRowDir()," ," ,this.getDirection().getColDir(),")");
     }
