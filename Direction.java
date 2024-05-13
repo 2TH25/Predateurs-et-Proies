@@ -38,7 +38,7 @@ public class Direction {
                 rowDir=0;
 
             }
-            if(random_row >=.66 && random_row<=1){
+            if(random_row >=0.66 && random_row<=1){
                 rowDir=1;
 
             }
