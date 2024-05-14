@@ -27,8 +27,5 @@ public class Chasseur extends Predateurs {
             }
         }
     }
-    public void applatir(Case cases){
-        cases.setLongueur_herbe(0);
-            
-    }
+ 
 }

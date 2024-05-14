@@ -1,9 +1,9 @@
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("t");
+      
         Plateau PlateauDeJeu = new Plateau(9,9);
-        System.out.println("t");
+      
 
         PlateauDeJeu.generationPlateau();
         PlateauDeJeu.generationEntites();
@@ -27,9 +27,6 @@ public class Main {
                 for(int l = 1 ; l<PlateauDeJeu.getColNumber()-1 ; l++){
                     if(PlateauDeJeu.getPlateau()[k][l].getSymbole()!='X'&& PlateauDeJeu.getPlateau()[k][l].getSymbole()!=' '){
                         PlateauDeJeu.getPlateau()[k][l].setAgi(false);
-                    }
-                    if(tours_effectues%3==0&&PlateauDeJeu.getPlateau()[k][l].getLongueur_herbe()<=2){
-                        PlateauDeJeu.getPlateau()[k][l].setLongueur_herbe(PlateauDeJeu.getPlateau()[k][l].getLongueur_herbe()+1);
                     }
                 }
             }
