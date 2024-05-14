@@ -1,11 +1,14 @@
 public class Main {
 
     public static void main(String[] args) {
+        System.out.println("t");
         Plateau PlateauDeJeu = new Plateau(9,9);
-        PlateauDeJeu.generationPlateau();
-        PlateauDeJeu.afficherPlateau();
-        int tours_effectues=0;
+        System.out.println("t");
 
+        PlateauDeJeu.generationPlateau();
+        PlateauDeJeu.generationEntites();
+        PlateauDeJeu.afficherPlateau();  
+        int tours_effectues=0;
 
     //boucle de jeu principale
 
