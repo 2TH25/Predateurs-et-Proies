@@ -19,10 +19,6 @@ public class Poule extends Proies {
             }
         }
     }
-    public void herbeTropHaute(){
-        if(this.getLongueur_herbe()>=2){
-            
-        }
-    }
+    
     
 }

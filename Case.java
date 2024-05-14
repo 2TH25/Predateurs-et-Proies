@@ -54,7 +54,7 @@ public class Case {
 
     }
     public void redirection(Case entite){
-        entite.herbeTropHaute();
+        entite.herbeTropBasse();
         if(!entite.getAgi()){
         Position position_cible = new Position(this.getPosition().getRow(),this.getPosition().getCol());
         Case case_cible = new Case(position_cible,this.getPlateauType());
@@ -69,7 +69,7 @@ public class Case {
         }
      
     }
-    public void herbeTropHaute(){
+    public void herbeTropBasse(){
 
     }
 

@@ -21,5 +21,16 @@ public class Lapin extends Proies {
         }
         
     }
+    public void applatir(Case cases){
+        if(this.getLongueur_herbe()>0){
+            cases.setLongueur_herbe(getLongueur_herbe()-1);
+        }
+    }
+    public void herbeTropBasse(){
+        if(this.getLongueur_herbe()<=1){
+            while(this.getPlateauType().getPlateau()[this.getPosition().getRow()][this.getPosition().getCol()].getSymbole()==' '||this.getPlateauType().getPlateau()[this.getPosition().getRow()][this.getPosition().getCol()].getSymbole()==',')
+                this.getDirection().generationDirection();
+        }
+    }
 }
 
