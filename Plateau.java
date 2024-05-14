@@ -70,6 +70,7 @@ public class Plateau {
             }
         }
         
+        
     }
     
 
@@ -78,44 +79,60 @@ public class Plateau {
         int limite_entite_l = 5;
         int limite_entite_r = 5;
         int limite_entite_c = 5;
-
-        while(limite_entite_c>0 || limite_entite_l>0 ||limite_entite_p>0 || limite_entite_r>0){
-            int random_i = 1+ (int)(Math.random()*(rowNumber-2));
-            int random_j = 1+ (int)(Math.random()*(colNumber-2));
-            
-                    Position position_temporaire = new Position(random_i, random_j);
-                        if(plateau[random_i][random_j].getSymbole()==' '){
-                            
-                            if(0<limite_entite_p){
-                                Poule p = new Poule(position_temporaire,this);
+        int random_i;
+        int random_j;
+        for(int a=0;a<limite_entite_p;a++){
+            random_i = 1+ (int)(Math.random()*(rowNumber-2));
+            random_j = 1+ (int)(Math.random()*(colNumber-2));
+            Position position_temporaire = new Position(random_i, random_j);
+            if(plateau[random_i][random_j].getSymbole()==' '){
+                Poule p = new Poule(position_temporaire,this);
                                 p.setCase_id(this.plateau[random_i][random_j]);
                                 this.plateau[random_i][random_j]=p;
-                                limite_entite_p = limite_entite_p-1;
-                                
-                            }
-                            else if(0<limite_entite_l){
-                                Lapin l = new Lapin(position_temporaire,this);
+            }else {
+                
+            }
+
+        }
+        for(int b=0;b<limite_entite_l;b++){
+            random_i = 1+ (int)(Math.random()*(rowNumber-2));
+            random_j = 1+ (int)(Math.random()*(colNumber-2));
+            Position position_temporaire = new Position(random_i, random_j);
+            if(plateau[random_i][random_j].getSymbole()==' '){
+                Lapin l = new Lapin(position_temporaire,this);
                                 l.setCase_id(this.plateau[random_i][random_j]);
                                 this.plateau[random_i][random_j]=l;
-                                limite_entite_l = limite_entite_l-1;
-                            }
-                            else if(0<limite_entite_r){
-                                Renard r = new Renard(position_temporaire,this);
+                                
+            }else {
+                
+            }
+
+        }
+        for(int c=0;c<limite_entite_r;c++){
+            random_i = 1+ (int)(Math.random()*(rowNumber-2));
+            random_j = 1+ (int)(Math.random()*(colNumber-2));
+            Position position_temporaire = new Position(random_i, random_j);
+            if(plateau[random_i][random_j].getSymbole()==' '){
+                Renard r = new Renard(position_temporaire,this);
                                 r.setCase_id(this.plateau[random_i][random_j]);
                                 this.plateau[random_i][random_j]=r;
-                                limite_entite_r = limite_entite_r-1;
-                            }
-                            else if(0<limite_entite_c){
-                                Chasseur c = new Chasseur(position_temporaire,this);
+            }else {
+              
+            }
+
+        }
+        for(int d=0;d<limite_entite_c;d++){
+            random_i = 1+ (int)(Math.random()*(rowNumber-2));
+            random_j = 1+ (int)(Math.random()*(colNumber-2));
+            Position position_temporaire = new Position(random_i, random_j);
+            if(plateau[random_i][random_j].getSymbole()==' '){
+                Chasseur c = new Chasseur(position_temporaire,this);
                                 c.setCase_id(this.plateau[random_i][random_j]);
                                 this.plateau[random_i][random_j]=c;
-                                limite_entite_c = limite_entite_c-1;
-                            }
-                           
+            }else {
+                
+            }
 
-                        }
-                        
-                    
         }
     }
 

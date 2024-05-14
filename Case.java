@@ -7,7 +7,7 @@ public class Case {
     
 
 
-    Case (Position position, char symbole, Plateau plateau) {
+    Case (Position position,char symbole, Plateau plateau) {
         this.position = position;
         this.symbole = symbole;
         this.direction = new Direction();
