@@ -5,6 +5,7 @@ public class Case {
     private Plateau plateau;
     private boolean a_deja_agi = false;
     private int debuff_deplacement;
+    private int tour_debuff_applique;
     
 
 
@@ -33,6 +34,12 @@ public class Case {
     public void retireDebuff_Deplacement(){
         this.debuff_deplacement=0;
     }
+    public int getTour_Debuff_Applique(){
+        return this.tour_debuff_applique;
+    }
+    public void setTour_Debuff_Applique(int tour_effectue){
+        this.tour_debuff_applique=tour_effectue;
+    }
     public Direction getDirection(){
         return this.direction;
     }
@@ -58,22 +65,49 @@ public class Case {
         
     }
     public void interactionFinale(Case entite){
+        
 
     }
     public void redirection(Case entite){
-   
-        if(!entite.getAgi()){
-        Position position_cible = new Position(this.getPosition().getRow(),this.getPosition().getCol());
-        Case case_cible = new Case(position_cible,this.getPlateauType());
-        entite.getPlateauType().retirerCase(entite);
-        entite.getPlateauType().ajouterCase(entite.getCase_id());
-        
-        entite.getPlateauType().retirerCase(case_cible);
-        entite.setCase_id(case_cible);
-        entite.setPosition(case_cible.getPosition());
-        entite.getPlateauType().ajouterCase(entite);
-        entite.setAgi(true);
+        if(this.getDebuff_Deplacement()==1&&this.getPlateauType().getTour()-this.getTour_Debuff_Applique()<=4){
+            double random_deplacement = Math.random();
+            if(random_deplacement>=0 && random_deplacement<0.5){
+
+            }
+            else {
+                if(!entite.getAgi()){
+                    Position position_cible = new Position(this.getPosition().getRow(),this.getPosition().getCol());
+                    Case case_cible = new Case(position_cible,this.getPlateauType());
+                    entite.getPlateauType().retirerCase(entite);
+                    entite.getPlateauType().ajouterCase(entite.getCase_id());
+                    
+                    entite.getPlateauType().retirerCase(case_cible);
+                    entite.setCase_id(case_cible);
+                    entite.setPosition(case_cible.getPosition());
+                    entite.getPlateauType().ajouterCase(entite);
+                    entite.setAgi(true);
+                    }
+
+            }
         }
+        else {
+            this.retireDebuff_Deplacement();
+            if(!entite.getAgi()){
+                Position position_cible = new Position(this.getPosition().getRow(),this.getPosition().getCol());
+                Case case_cible = new Case(position_cible,this.getPlateauType());
+                entite.getPlateauType().retirerCase(entite);
+                entite.getPlateauType().ajouterCase(entite.getCase_id());
+                
+                entite.getPlateauType().retirerCase(case_cible);
+                entite.setCase_id(case_cible);
+                entite.setPosition(case_cible.getPosition());
+                entite.getPlateauType().ajouterCase(entite);
+                entite.setAgi(true);
+                }
+
+        }
+   
+       
      
     }
 

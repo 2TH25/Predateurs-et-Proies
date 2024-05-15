@@ -2,6 +2,7 @@ public class Plateau {
 
     private int rowNumber;
     private int colNumber;
+    private int tours_effectues;
     Case[][] plateau;
  
     
@@ -15,6 +16,12 @@ public class Plateau {
 
     Plateau(){
         this(8,8);
+    }
+    public void addTour(){
+        this.tours_effectues=this.tours_effectues+1;
+    }
+    public int getTour(){
+        return this.tours_effectues;
     }
 
     public void setPlateau(int rowNumber,int colNumber){
@@ -75,10 +82,10 @@ public class Plateau {
     
 
     public void generationEntites(){
-        int limite_entite_p = 5;
-        int limite_entite_l = 5;
-        int limite_entite_r = 5;
-        int limite_entite_c = 5;
+        int limite_entite_p = 3;
+        int limite_entite_l = 3;
+        int limite_entite_r = 3;
+        int limite_entite_c = 3;
         int limite_entite_trap=2;
         int random_i;
         int random_j;
