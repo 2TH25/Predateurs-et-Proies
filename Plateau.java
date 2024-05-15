@@ -79,18 +79,20 @@ public class Plateau {
         int limite_entite_l = 5;
         int limite_entite_r = 5;
         int limite_entite_c = 5;
+        int limite_entite_trap=2;
         int random_i;
         int random_j;
+        Ecran.afficherln("t");
         for(int a=0;a<limite_entite_p;a++){
             random_i = 1+ (int)(Math.random()*(rowNumber-2));
             random_j = 1+ (int)(Math.random()*(colNumber-2));
             Position position_temporaire = new Position(random_i, random_j);
             if(plateau[random_i][random_j].getSymbole()==' '){
                 Poule p = new Poule(position_temporaire,this);
-                                p.setCase_id(this.plateau[random_i][random_j]);
-                                this.plateau[random_i][random_j]=p;
+                p.setCase_id(this.plateau[random_i][random_j]);
+                this.plateau[random_i][random_j]=p;
             }else {
-                
+                limite_entite_p=limite_entite_p+1;
             }
 
         }
@@ -100,11 +102,11 @@ public class Plateau {
             Position position_temporaire = new Position(random_i, random_j);
             if(plateau[random_i][random_j].getSymbole()==' '){
                 Lapin l = new Lapin(position_temporaire,this);
-                                l.setCase_id(this.plateau[random_i][random_j]);
-                                this.plateau[random_i][random_j]=l;
+                l.setCase_id(this.plateau[random_i][random_j]);
+                this.plateau[random_i][random_j]=l;
                                 
             }else {
-                
+                limite_entite_l=limite_entite_l+1;
             }
 
         }
@@ -114,10 +116,10 @@ public class Plateau {
             Position position_temporaire = new Position(random_i, random_j);
             if(plateau[random_i][random_j].getSymbole()==' '){
                 Renard r = new Renard(position_temporaire,this);
-                                r.setCase_id(this.plateau[random_i][random_j]);
-                                this.plateau[random_i][random_j]=r;
+                r.setCase_id(this.plateau[random_i][random_j]);
+                this.plateau[random_i][random_j]=r;
             }else {
-              
+                limite_entite_r=limite_entite_r+1;
             }
 
         }
@@ -127,10 +129,23 @@ public class Plateau {
             Position position_temporaire = new Position(random_i, random_j);
             if(plateau[random_i][random_j].getSymbole()==' '){
                 Chasseur c = new Chasseur(position_temporaire,this);
-                                c.setCase_id(this.plateau[random_i][random_j]);
-                                this.plateau[random_i][random_j]=c;
+                c.setCase_id(this.plateau[random_i][random_j]);
+                this.plateau[random_i][random_j]=c;
             }else {
-                
+                limite_entite_c=limite_entite_c+1;
+            }
+
+        }
+        for(int e=0;e<limite_entite_trap;e++){
+            random_i = 1+ (int)(Math.random()*(rowNumber-2));
+            random_j = 1+ (int)(Math.random()*(colNumber-2));
+            Position position_temporaire = new Position(random_i, random_j);
+            if(plateau[random_i][random_j].getSymbole()==' '){
+                Piege pi = new Piege(position_temporaire,this);
+                pi.setCase_id(this.plateau[random_i][random_j]);
+                this.plateau[random_i][random_j]=pi;
+            }else {
+                limite_entite_trap=limite_entite_trap+1;
             }
 
         }

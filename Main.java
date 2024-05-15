@@ -4,7 +4,7 @@ public class Main {
       
         Plateau PlateauDeJeu = new Plateau(9,9);
       
-
+        
         PlateauDeJeu.generationPlateau();
         PlateauDeJeu.generationEntites();
         PlateauDeJeu.afficherPlateau();  
