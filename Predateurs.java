@@ -5,9 +5,5 @@ public class Predateurs extends Personnage {
     }
 
 
-    public void tuerEntite(Case entite){
-        this.getPlateauType().retirerCase(entite);
-        this.getPlateauType().ajouterCase(entite.getCase_id());
 
-    }
 }

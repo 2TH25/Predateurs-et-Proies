@@ -4,6 +4,7 @@ public class Case {
     private char symbole;
     private Plateau plateau;
     private boolean a_deja_agi = false;
+    private int debuff_deplacement;
     
 
 
@@ -12,6 +13,7 @@ public class Case {
         this.symbole = symbole;
         this.direction = new Direction();
         this.plateau=plateau;
+        this.debuff_deplacement=0;
         
     }
 
@@ -19,7 +21,17 @@ public class Case {
         this.position=position;
         this.plateau=plateau;
         this.symbole=' ';
+        this.debuff_deplacement=0;
         
+    }
+    public int getDebuff_Deplacement(){
+        return this.debuff_deplacement;
+    }
+    public void addDebuff_Deplacement(){
+        this.debuff_deplacement=1;
+    }
+    public void retireDebuff_Deplacement(){
+        this.debuff_deplacement=0;
     }
     public Direction getDirection(){
         return this.direction;
@@ -78,6 +90,12 @@ public class Case {
 
     public Position getPosition(){
         return this.position;
+    }
+
+    public void tuerEntite(Case entite){
+        this.getPlateauType().retirerCase(entite);
+        this.getPlateauType().ajouterCase(entite.getCase_id());
+
     }
 
     
