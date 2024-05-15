@@ -9,19 +9,15 @@ public class Poule extends Proies {
 
     public void interactionFinale(Case entite){
         if(!this.getAgi()){
-            if(entite.getSymbole()!=' '&&entite.getSymbole()!='X'&&entite.getSymbole()!='w'){
+            if(entite.getSymbole()!=' '&&entite.getSymbole()!='X'){
                 Direction new_direction = new Direction(-this.getDirection().getRowDir(),-this.getDirection().getColDir());
                 this.setDirection(new_direction);
                 this.setAgi(true);
             }
-            else if(entite.getSymbole()!='w'){
+            else{
                 entite.redirection(this);
             }
-            else {
-                entite.tuerEntite(this);
-                entite.getPlateauType().retirerCase(entite);
-                entite.getPlateauType().ajouterCase(entite.getCase_id());
-            }
+            
         }
     }
     

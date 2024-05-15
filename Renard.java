@@ -8,25 +8,15 @@ public class Renard extends Predateurs {
     }
     public void interactionFinale(Case entite){
         if(!this.getAgi()){
-            if(entite.getSymbole()!=' '&&entite.getSymbole()!='X'&&entite.getSymbole()!='w'){
+            if(entite.getSymbole()!=' '&&entite.getSymbole()!='X'){
                 if(entite.getSymbole()=='C'||entite.getSymbole()=='R'){
                     this.getDirection().generationDirection();
                     this.setAgi(true);
-                }else if(entite.getSymbole()!='w'){
+                }else{
                     //l'entité(la case) est supprimée de la matrice plateau
                     this.tuerEntite(entite);
                     this.setAgi(true);
                 }
-                else {
-                    //lorqu'une entité Poule, Renard, ou Lapin marche sur un Piege, cette entité décède.
-      
-                    this.tuerEntite(entite);
-                    //Un piège est à usage unique, lorsqu'il élimine une entité, le Piege est supprimé. 
-                    this.getPlateauType().retirerCase(this);
-                    this.getPlateauType().ajouterCase(this.getCase_id());}
-        
-               
-        
             }
             
             else{

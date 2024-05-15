@@ -40,7 +40,6 @@ public class Main {
                 finally {
                     Ecran.afficherln("Mise en attente bien réalisée");
                 }
-            PlateauDeJeu.addTour();
             PlateauDeJeu.afficherPlateau();
         }
 

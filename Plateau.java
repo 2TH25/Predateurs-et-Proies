@@ -2,7 +2,6 @@ public class Plateau {
 
     private int rowNumber;
     private int colNumber;
-    private int tours_effectues;
     Case[][] plateau;
  
     
@@ -16,12 +15,6 @@ public class Plateau {
 
     Plateau(){
         this(8,8);
-    }
-    public void addTour(){
-        this.tours_effectues=this.tours_effectues+1;
-    }
-    public int getTour(){
-        return this.tours_effectues;
     }
 
     public void setPlateau(int rowNumber,int colNumber){
@@ -46,6 +39,9 @@ public class Plateau {
     public void ajouterCase(Case cases){
         plateau[cases.getPosition().getRow()][cases.getPosition().getCol()] = cases;
 
+    }
+    public void clearPosition(Position position){
+        this.plateau[position.getRow()][position.getCol()] = new Case(position,this);
     }
     public void retirerCase(Case cases){
         plateau[cases.getPosition().getRow()][cases.getPosition().getCol()] = null;
@@ -76,8 +72,6 @@ public class Plateau {
                 }
             }
         }
-        
-        
     }
     
 
@@ -89,72 +83,57 @@ public class Plateau {
         int limite_entite_trap=2;
         int random_i;
         int random_j;
-        Ecran.afficherln("t");
+
         for(int a=0;a<limite_entite_p;a++){
-            random_i = 1+ (int)(Math.random()*(rowNumber-2));
-            random_j = 1+ (int)(Math.random()*(colNumber-2));
-            Position position_temporaire = new Position(random_i, random_j);
-            if(plateau[random_i][random_j].getSymbole()==' '){
-                Poule p = new Poule(position_temporaire,this);
-                p.setCase_id(this.plateau[random_i][random_j]);
-                this.plateau[random_i][random_j]=p;
-            }else {
-                limite_entite_p=limite_entite_p+1;
-            }
-
+            do {
+                random_i = 1+ (int)(Math.random()*(rowNumber-2));
+                random_j = 1+ (int)(Math.random()*(colNumber-2));
+                
+                
+            } while(plateau[random_i][random_j].getSymbole()!=' ');
+            
+                    Position position_temporaire = new Position(random_i, random_j);
+                    Poule p = new Poule(position_temporaire,this);
+                    
+                    this.plateau[random_i][random_j]=p;
         }
+        
+
         for(int b=0;b<limite_entite_l;b++){
-            random_i = 1+ (int)(Math.random()*(rowNumber-2));
-            random_j = 1+ (int)(Math.random()*(colNumber-2));
-            Position position_temporaire = new Position(random_i, random_j);
-            if(plateau[random_i][random_j].getSymbole()==' '){
-                Lapin l = new Lapin(position_temporaire,this);
-                l.setCase_id(this.plateau[random_i][random_j]);
-                this.plateau[random_i][random_j]=l;
-                                
-            }else {
-                limite_entite_l=limite_entite_l+1;
-            }
-
+            
+            do {
+                random_i = 1+ (int)(Math.random()*(rowNumber-2));
+                random_j = 1+ (int)(Math.random()*(colNumber-2));
+            } while(plateau[random_i][random_j].getSymbole()!=' ');
+                    Position position_temporaire = new Position(random_i, random_j);
+                    Lapin l = new Lapin(position_temporaire,this);
+                    
+                    this.plateau[random_i][random_j]=l;
         }
+                
+        
         for(int c=0;c<limite_entite_r;c++){
-            random_i = 1+ (int)(Math.random()*(rowNumber-2));
-            random_j = 1+ (int)(Math.random()*(colNumber-2));
-            Position position_temporaire = new Position(random_i, random_j);
-            if(plateau[random_i][random_j].getSymbole()==' '){
-                Renard r = new Renard(position_temporaire,this);
-                r.setCase_id(this.plateau[random_i][random_j]);
-                this.plateau[random_i][random_j]=r;
-            }else {
-                limite_entite_r=limite_entite_r+1;
-            }
-
+            do {
+                random_i = 1+ (int)(Math.random()*(rowNumber-2));
+                random_j = 1+ (int)(Math.random()*(colNumber-2));
+        
+            } while(plateau[random_i][random_j].getSymbole()!=' ');
+                    Position position_temporaire = new Position(random_i, random_j);
+                    Renard r = new Renard(position_temporaire,this);
+                    
+                    this.plateau[random_i][random_j]=r;
         }
+        
+    
         for(int d=0;d<limite_entite_c;d++){
-            random_i = 1+ (int)(Math.random()*(rowNumber-2));
-            random_j = 1+ (int)(Math.random()*(colNumber-2));
-            Position position_temporaire = new Position(random_i, random_j);
-            if(plateau[random_i][random_j].getSymbole()==' '){
-                Chasseur c = new Chasseur(position_temporaire,this);
-                c.setCase_id(this.plateau[random_i][random_j]);
-                this.plateau[random_i][random_j]=c;
-            }else {
-                limite_entite_c=limite_entite_c+1;
-            }
-
-        }
-        for(int e=0;e<limite_entite_trap;e++){
-            random_i = 1+ (int)(Math.random()*(rowNumber-2));
-            random_j = 1+ (int)(Math.random()*(colNumber-2));
-            Position position_temporaire = new Position(random_i, random_j);
-            if(plateau[random_i][random_j].getSymbole()==' '){
-                Piege pi = new Piege(position_temporaire,this);
-                pi.setCase_id(this.plateau[random_i][random_j]);
-                this.plateau[random_i][random_j]=pi;
-            }else {
-                limite_entite_trap=limite_entite_trap+1;
-            }
-
+            do {
+                random_i = 1+ (int)(Math.random()*(rowNumber-2));
+                random_j = 1+ (int)(Math.random()*(colNumber-2));
+            } while(plateau[random_i][random_j].getSymbole()!=' ');
+                    Position position_temporaire = new Position(random_i, random_j);
+                    Chasseur c = new Chasseur(position_temporaire,this);
+                    
+                    this.plateau[random_i][random_j]=c;
         }
     }
 
