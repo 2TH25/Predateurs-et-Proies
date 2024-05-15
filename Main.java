@@ -6,7 +6,9 @@ public class Main {
       
         
         PlateauDeJeu.generationPlateau();
+        Ecran.afficherln("La matrice est générée");
         PlateauDeJeu.generationEntites();
+        Ecran.afficherln("Les entités sont générées");
         PlateauDeJeu.afficherPlateau();  
 
     //boucle de jeu principale
