@@ -19,13 +19,16 @@ public class Chasseur extends Predateurs {
                 }else{
                     //l'entité(la case) est supprimée de la matrice plateau
                     this.tuerEntite(entite);
+                    entite.redirection(this);
                     this.setAgi(true);
+                    
                 }
             }
+            else{
+                entite.redirection(this);
+            }
         }
-        else{
-            entite.redirection(this);
-        }
+        
     }
 }
  
