@@ -3,6 +3,7 @@ public class Plateau {
     private int rowNumber;
     private int colNumber;
     Case[][] plateau;
+    private int tour;
  
     
 
@@ -10,13 +11,20 @@ public class Plateau {
         this.colNumber=colNumber;
         this.rowNumber=rowNumber;
         this.plateau = new Case[rowNumber][colNumber];
+        this.tour=0;
 
     }
 
     Plateau(){
         this(8,8);
+        this.tour=0;
     }
-
+    public int getTour(){
+        return this.tour;
+    }
+    public void addTour(){
+        this.tour=this.tour+1;
+    }
     public void setPlateau(int rowNumber,int colNumber){
         this.rowNumber=rowNumber;
         this.colNumber=colNumber;
@@ -42,6 +50,11 @@ public class Plateau {
     }
     public void clearPosition(Position position){
         this.plateau[position.getRow()][position.getCol()] = new Case(position,this);
+    }
+    public void clearHerbe(Position position){
+        if(this.plateau[position.getRow()][position.getCol()].getLongueur_Memoire()!=-1){
+            this.plateau[position.getRow()][position.getCol()] = new Herbe(position,this,this.plateau[position.getRow()][position.getCol()].getLongueur_Memoire());
+        }
     }
     public void retirerCase(Case cases){
         plateau[cases.getPosition().getRow()][cases.getPosition().getCol()] = null;
@@ -76,10 +89,11 @@ public class Plateau {
     
 
     public void generationEntites(){
-        int limite_entite_p = 1;
-        int limite_entite_l = 1;
-        int limite_entite_r = 1;
-        int limite_entite_c = 1;
+        int limite_entite_p = 3;
+        int limite_entite_l = 3;
+        int limite_entite_r = 3;
+        int limite_entite_c = 3;
+        int limite_entite_h = 10;
         int random_i;
         int random_j;
         Ecran.afficherln("les limites sont crées");
@@ -136,7 +150,17 @@ public class Plateau {
                     this.plateau[random_i][random_j]=c;
         }
         Ecran.afficherln("dernier for effectué");
-    }
+        for(int e=0;e<limite_entite_h;e++){
+            do {
+                random_i = 1+ (int)(Math.random()*(rowNumber-2));
+                random_j = 1+ (int)(Math.random()*(colNumber-2));
+            } while(plateau[random_i][random_j].getSymbole()!=' ');
+                    Position position_temporaire = new Position(random_i, random_j);
+                    Herbe h = new Herbe(position_temporaire,this);
+                    
+                    this.plateau[random_i][random_j]=h;
+        }
+    }   
 
 
     public int nombreEntitesRestantes(){

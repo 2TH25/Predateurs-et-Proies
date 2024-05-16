@@ -2,7 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
       
-        Plateau PlateauDeJeu = new Plateau(9,9);
+        Plateau PlateauDeJeu = new Plateau(10,10);
       
         
         PlateauDeJeu.generationPlateau();
@@ -13,7 +13,7 @@ public class Main {
 
     //boucle de jeu principale
 
-        while(PlateauDeJeu.nombreEntitesRestantes()>3){
+        while(PlateauDeJeu.nombreEntitesRestantes()>5){
             for(int i = 1; i<PlateauDeJeu.getRowNumber()-1 ; i++){
                 for(int j = 1 ; j<PlateauDeJeu.getColNumber()-1 ; j++){
                     if(PlateauDeJeu.getPlateau()[i][j].getSymbole()!='X'&& PlateauDeJeu.getPlateau()[i][j].getSymbole()!=' '&&PlateauDeJeu.getPlateau()[i][j].getSymbole()!='w'){
@@ -42,6 +42,16 @@ public class Main {
                 finally {
                     Ecran.afficherln("Mise en attente bien réalisée");
                 }
+            PlateauDeJeu.addTour();
+            if(PlateauDeJeu.getTour()%3==0){
+                for(int x = 1; x<PlateauDeJeu.getRowNumber()-1 ; x++){
+                    for(int y = 1 ; y<PlateauDeJeu.getColNumber()-1 ; y++){
+                        if(PlateauDeJeu.getPlateau()[x][y].getLongueur_Herbe()!=-1&&PlateauDeJeu.getPlateau()[x][y].getLongueur_Herbe()<2){
+                            PlateauDeJeu.getPlateau()[x][y].addLongueur_Herbe();
+                        }
+                    }
+                }
+            }
             PlateauDeJeu.afficherPlateau();
         }
 

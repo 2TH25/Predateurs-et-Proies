@@ -48,12 +48,25 @@ public class Case {
         if(!entite.getAgi()){
             Position position_cible = new Position(this.getPosition().getRow(),this.getPosition().getCol());
             Case case_cible = new Case(position_cible,this.getPlateauType());
-            this.getPlateauType().clearPosition(entite.getPosition());
+            if(entite.getLongueur_Memoire()!=-1){
+                this.getPlateauType().clearHerbe(entite.getPosition());
+            }else {
+                this.getPlateauType().clearPosition(entite.getPosition());
+            }
+            
             entite.getPlateauType().retirerCase(case_cible);
             entite.setPosition(case_cible.getPosition());
             entite.getPlateauType().ajouterCase(entite);
             entite.setAgi(true);
         }
+    }
+    public void addLongueur_Herbe(){
+    }
+    public int getLongueur_Herbe(){
+        return -1;
+    }
+    public int getLongueur_Memoire(){
+        return -1;
     }
 
 
