@@ -21,10 +21,9 @@ public class Chasseur extends Predateurs {
                     this.tuerEntite(entite);
                     this.setAgi(true);
                 }
-            }
-        }
-        else{
+            } else {
             entite.redirection(this);
+            }
         }
     }
 }

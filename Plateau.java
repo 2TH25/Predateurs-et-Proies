@@ -76,10 +76,10 @@ public class Plateau {
     
 
     public void generationEntites(){
-        int limite_entite_p = 3;
-        int limite_entite_l = 3;
-        int limite_entite_r = 3;
-        int limite_entite_c = 3;
+        int limite_entite_p = 1;
+        int limite_entite_l = 1;
+        int limite_entite_r = 1;
+        int limite_entite_c = 1;
         int random_i;
         int random_j;
         Ecran.afficherln("les limites sont crées");
