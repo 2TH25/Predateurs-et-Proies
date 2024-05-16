@@ -40,7 +40,7 @@ public class Herbe extends Case {
         else {
             Position position_cible = new Position(this.getPosition().getRow(),this.getPosition().getCol());
             Case case_cible = new Case(position_cible,this.getPlateauType());
-            this.getPlateauType().clearPosition(entite.getPosition());
+            this.getPlateauType().clearHerbe(position_cible);
             entite.getPlateauType().retirerCase(case_cible);
             entite.setPosition(case_cible.getPosition());
             entite.getPlateauType().ajouterCase(entite);
