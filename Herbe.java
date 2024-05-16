@@ -34,19 +34,23 @@ public class Herbe extends Case {
         if(entite.getSymbole()=='C'){
             this.herbe_longueur=0;
         }
+        if(entite.getSymbole()=='L'&&this.herbe_longueur>0){
+            this.herbe_longueur=this.herbe_longueur-1;
+        }
         if(entite.getSymbole()=='L'&&this.getLongueur_Memoire()==0){
             entite.getDirection().generationDirection();
         }
         else {
             Position position_cible = new Position(this.getPosition().getRow(),this.getPosition().getCol());
             Case case_cible = new Case(position_cible,this.getPlateauType());
-            this.getPlateauType().clearHerbe(position_cible);
+            this.getPlateauType().clearHerbe(entite.getPosition());
             entite.getPlateauType().retirerCase(case_cible);
             entite.setPosition(case_cible.getPosition());
             entite.getPlateauType().ajouterCase(entite);
             entite.setAgi(true);
         }
     }
+
     public void addLongueur_Herbe(){
         this.herbe_longueur=this.herbe_longueur+1;
         this.longueur_memoire=this.longueur_memoire+1;
