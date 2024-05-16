@@ -2,14 +2,11 @@ public class Main {
 
     public static void main(String[] args) {
       
-        Plateau PlateauDeJeu = new Plateau(10,10);
+        Plateau PlateauDeJeu = new Plateau();
+        PlateauDeJeu.initialisationUtilisateur();
       
         
-        PlateauDeJeu.generationPlateau();
-        Ecran.afficherln("La matrice est générée");
-        PlateauDeJeu.generationEntites();
-        Ecran.afficherln("Les entités sont générées");
-        PlateauDeJeu.afficherPlateau();  
+        
 
     //boucle de jeu principale
 

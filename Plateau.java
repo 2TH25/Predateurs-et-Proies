@@ -30,6 +30,26 @@ public class Plateau {
         this.colNumber=colNumber;
         
     }
+    public void initialisationUtilisateur(){
+        Ecran.afficherln("Quelle est le nombre de lignes que vous souhaitez pour votre plateau ? : ");
+        int ligne = Clavier.saisirInt();
+        Ecran.afficherln("Quelle est le nombre de colonnes que vous souhaitez pour votre plateau ? : ");
+        int colonne = Clavier.saisirInt();
+        this.setPlateau(ligne, colonne);
+        this.generationPlateau();
+        Ecran.afficherln("Quelle est le nombre de Poules que vous souhaitez ? : ");
+        int poules = Clavier.saisirInt();
+        Ecran.afficherln("Quelle est le nombre de Lapins que vous souhaitez ? : ");
+        int lapins = Clavier.saisirInt();
+        Ecran.afficherln("Quelle est le nombre de Renards que vous souhaitez ? : ");
+        int renards = Clavier.saisirInt();
+        Ecran.afficherln("Quelle est le nombre de Chasseurs que vous souhaitez ? : ");
+        int chasseurs = Clavier.saisirInt();
+        this.generationEntites(poules, lapins, renards, chasseurs);
+        this.afficherPlateau();
+        
+        
+    }
     public Case[][] getPlateau(){
         return this.plateau;
     }
@@ -88,12 +108,9 @@ public class Plateau {
     }
     
 
-    public void generationEntites(){
-        int limite_entite_p = 3;
-        int limite_entite_l = 3;
-        int limite_entite_r = 3;
-        int limite_entite_c = 3;
-        int limite_entite_h = 10;
+    public void generationEntites(int limite_entite_p,int limite_entite_l,int limite_entite_r,int limite_entite_c){
+        
+        
         int random_i;
         int random_j;
         Ecran.afficherln("les limites sont crées");
@@ -150,16 +167,7 @@ public class Plateau {
                     this.plateau[random_i][random_j]=c;
         }
         Ecran.afficherln("dernier for effectué");
-        for(int e=0;e<limite_entite_h;e++){
-            do {
-                random_i = 1+ (int)(Math.random()*(rowNumber-2));
-                random_j = 1+ (int)(Math.random()*(colNumber-2));
-            } while(plateau[random_i][random_j].getSymbole()!=' ');
-                    Position position_temporaire = new Position(random_i, random_j);
-                    Herbe h = new Herbe(position_temporaire,this);
-                    
-                    this.plateau[random_i][random_j]=h;
-        }
+        
     }   
 
 
