@@ -17,7 +17,7 @@ public class Bordure extends Case {
                     entite.getDirection().setDirection(entite.getDirection().getRowDir(), -entite.getDirection().getColDir());
                     entite.setAgi(true);
                 }
-                else if(this.getPosition().getRow()==posx.getRow()&&posx.getCol()!=0){
+                if(this.getPosition().getRow()==posx.getRow()&&posx.getCol()!=0){
                     entite.getDirection().setDirection(-entite.getDirection().getRowDir(),entite.getDirection().getColDir());
                     entite.setAgi(true);
                 }

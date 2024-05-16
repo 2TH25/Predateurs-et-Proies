@@ -36,8 +36,9 @@ public class Herbe extends Case {
         }
         if(entite.getSymbole()=='L'&&this.herbe_longueur>0){
             this.herbe_longueur=this.herbe_longueur-1;
+            this.longueur_memoire=this.longueur_memoire-1;
         }
-        if(entite.getSymbole()=='L'&&this.getLongueur_Memoire()==0){
+        else if(entite.getSymbole()=='L'&&this.getLongueur_Memoire()==0){
             entite.getDirection().generationDirection();
         }
         else {
