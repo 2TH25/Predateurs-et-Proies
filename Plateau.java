@@ -53,7 +53,7 @@ public class Plateau {
     }
     public void clearHerbe(Position position){
         if(this.plateau[position.getRow()][position.getCol()].getLongueur_Memoire()!=-1){
-        this.plateau[position.getRow()][position.getCol()] = new Herbe(position,this,this.plateau[position.getRow()][position.getCol()].getLongueur_Memoire());
+            this.plateau[position.getRow()][position.getCol()] = new Herbe(position,this,this.plateau[position.getRow()][position.getCol()].getLongueur_Memoire());
         }
     }
     public void retirerCase(Case cases){
@@ -89,11 +89,11 @@ public class Plateau {
     
 
     public void generationEntites(){
-        int limite_entite_p = 5;
-        int limite_entite_l = 5;
-        int limite_entite_r = 5;
-        int limite_entite_c = 5;
-        int limite_entite_h = 20;
+        int limite_entite_p = 2;
+        int limite_entite_l = 2;
+        int limite_entite_r = 2;
+        int limite_entite_c = 2;
+        int limite_entite_h = 10;
         int random_i;
         int random_j;
         Ecran.afficherln("les limites sont crées");
