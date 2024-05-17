@@ -4,14 +4,14 @@ public class Main {
       
         Plateau PlateauDeJeu = new Plateau();
         PlateauDeJeu.initialisationUtilisateur();
-        
+        int number_entité_min=3;
       
         
         
 
     //boucle de jeu principale
 
-        while(PlateauDeJeu.nombreEntitesRestantes()>0){
+        while(PlateauDeJeu.nombreEntitesRestantes()>=number_entité_min){
             for(int i = 1; i<PlateauDeJeu.getRowNumber()-1 ; i++){
                 for(int j = 1 ; j<PlateauDeJeu.getColNumber()-1 ; j++){
                     if(PlateauDeJeu.getPlateau()[i][j].getSymbole()!='X'&& PlateauDeJeu.getPlateau()[i][j].getSymbole()!=' '&&PlateauDeJeu.getPlateau()[i][j].getSymbole()!='w'){
