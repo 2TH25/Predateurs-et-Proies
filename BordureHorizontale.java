@@ -1,6 +1,6 @@
-public class Coint extends Bordure {
+public class BordureHorizontale extends Bordure {
     
-    Coint(Position position,Plateau plateau){
+    BordureHorizontale(Position position,Plateau plateau){
         super(position,plateau);
     }
 
@@ -8,9 +8,10 @@ public class Coint extends Bordure {
         
         if(entite.getAgi()!=true){
             Direction dir = entite.getDirection();
-            dir.inverseDir();
+            dir.inverseRow();
             entite.setDirection(dir);
             entite.setAgi(true);
         }
     }
+
 }

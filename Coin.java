@@ -1,6 +1,6 @@
-public class BordureOrizontal extends Bordure {
+public class Coin extends Bordure {
     
-    BordureOrizontal(Position position,Plateau plateau){
+    Coin(Position position,Plateau plateau){
         super(position,plateau);
     }
 
@@ -8,10 +8,9 @@ public class BordureOrizontal extends Bordure {
         
         if(entite.getAgi()!=true){
             Direction dir = entite.getDirection();
-            dir.inverseRow();
+            dir.inverseDir();
             entite.setDirection(dir);
             entite.setAgi(true);
         }
     }
-
 }
