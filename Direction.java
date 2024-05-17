@@ -58,10 +58,20 @@ public class Direction {
         this.setDirection(rowDir,colDir);
     }
 
-    public void inverseDir(){
+    public void inverseCol(){
         this.colDir = -this.colDir;
+    }
+
+    public void inverseRow(){
         this.rowDir = -this.rowDir;
     }
+
+    public void inverseDir(){
+        this.inverseCol();
+        this.inverseRow();
+    }
+
+    
 
     
 }

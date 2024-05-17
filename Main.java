@@ -10,7 +10,7 @@ public class Main {
 
     //boucle de jeu principale
 
-        while(PlateauDeJeu.nombreEntitesRestantes()>5){
+        while(PlateauDeJeu.nombreEntitesRestantes()>0){
             for(int i = 1; i<PlateauDeJeu.getRowNumber()-1 ; i++){
                 for(int j = 1 ; j<PlateauDeJeu.getColNumber()-1 ; j++){
                     if(PlateauDeJeu.getPlateau()[i][j].getSymbole()!='X'&& PlateauDeJeu.getPlateau()[i][j].getSymbole()!=' '&&PlateauDeJeu.getPlateau()[i][j].getSymbole()!='w'){

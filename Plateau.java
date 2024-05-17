@@ -28,6 +28,7 @@ public class Plateau {
     public void setPlateau(int rowNumber,int colNumber){
         this.rowNumber=rowNumber;
         this.colNumber=colNumber;
+        this.plateau = new Case[rowNumber][colNumber];
         
     }
     public void initialisationUtilisateur(){
@@ -99,7 +100,13 @@ public class Plateau {
             for(int j=0;j<colNumber;j++){
                 Position position_temporaire = new Position(i,j);
                 if(i==0||i==rowNumber-1||j==0||j==colNumber-1){
-                    this.plateau[i][j] = new Bordure(position_temporaire,this);
+                    if(!(j==0 || j==colNumber-1)){
+                        this.plateau[i][j] = new BordureOrizontal(position_temporaire, this);
+                    } else if (!(i==0 || i==rowNumber-1)){
+                        this.plateau[i][j] = new BordureVerticale(position_temporaire, this);
+                    } else {
+                        this.plateau[i][j] = new Coint(position_temporaire, this);
+                    }
                 }else {
                     this.plateau[i][j] = new Case(position_temporaire,this);
                 }
