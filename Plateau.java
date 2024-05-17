@@ -119,12 +119,10 @@ public class Plateau {
         
         int random_i;
         int random_j;
-        Ecran.afficherln("les limites sont crées");
         for(int a=0;a<limite_entite_p;a++){
             do {
                 random_i = 1+ (int)(Math.random()*(rowNumber-2));
                 random_j = 1+ (int)(Math.random()*(colNumber-2));
-                Ecran.afficherln("premiers indices crées");
                 
             } while(plateau[random_i][random_j].getSymbole()!=' ');
             
@@ -133,8 +131,6 @@ public class Plateau {
                     
                     this.plateau[random_i][random_j]=p;
         }
-        
-        Ecran.afficherln("premier for effectué");
         for(int b=0;b<limite_entite_l;b++){
             
             do {
@@ -146,7 +142,6 @@ public class Plateau {
                     
                     this.plateau[random_i][random_j]=l;
         }
-        Ecran.afficherln("second for effectué");
                 
         
         for(int c=0;c<limite_entite_r;c++){
@@ -161,7 +156,6 @@ public class Plateau {
                     this.plateau[random_i][random_j]=r;
         }
         
-        Ecran.afficherln("troisième for effectué");
         for(int d=0;d<limite_entite_c;d++){
             do {
                 random_i = 1+ (int)(Math.random()*(rowNumber-2));
@@ -172,7 +166,6 @@ public class Plateau {
                     
                     this.plateau[random_i][random_j]=c;
         }
-        Ecran.afficherln("dernier for effectué");
         
     }   
 
