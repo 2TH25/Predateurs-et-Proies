@@ -11,7 +11,7 @@ public class Chasseur extends Predateurs {
     
     public void interactionFinale(Case entite){
         if(!this.getAgi()){
-            if(entite.getSymbole()!=' '&& entite.getSymbole()!='X' && entite.getLongueur_Memoire()==-1){
+            if(entite.getSymbole()!=' '&& entite.getSymbole()!='X'){
                 if(entite.getSymbole()=='C'||entite.getSymbole()=='P'){
                     this.getDirection().generationDirection();
                     this.setAgi(true);

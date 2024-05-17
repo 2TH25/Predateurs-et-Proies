@@ -48,12 +48,7 @@ public class Case {
         if(!entite.getAgi()){
             Position position_cible = new Position(this.getPosition().getRow(),this.getPosition().getCol());
             Case case_cible = new Case(position_cible,this.getPlateauType());
-            if(entite.getLongueur_Memoire()!=-1){
-                this.getPlateauType().clearHerbe(entite.getPosition());
-            }else {
-                this.getPlateauType().clearPosition(entite.getPosition());
-            }
-            
+            this.getPlateauType().clearPosition(entite.getPosition());
             entite.getPlateauType().retirerCase(case_cible);
             entite.setPosition(case_cible.getPosition());
             entite.getPlateauType().ajouterCase(entite);

@@ -72,11 +72,7 @@ public class Plateau {
     public void clearPosition(Position position){
         this.plateau[position.getRow()][position.getCol()] = new Case(position,this);
     }
-    public void clearHerbe(Position position){
-        if(this.plateau[position.getRow()][position.getCol()].getLongueur_Memoire()!=-1){
-            this.plateau[position.getRow()][position.getCol()] = new Herbe(position,this,this.plateau[position.getRow()][position.getCol()].getLongueur_Memoire());
-        }
-    }
+   
     public void retirerCase(Case cases){
         plateau[cases.getPosition().getRow()][cases.getPosition().getCol()] = null;
 
