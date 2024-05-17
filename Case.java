@@ -55,14 +55,7 @@ public class Case {
             entite.setAgi(true);
         }
     }
-    public void addLongueur_Herbe(){
-    }
-    public int getLongueur_Herbe(){
-        return -1;
-    }
-    public int getLongueur_Memoire(){
-        return -1;
-    }
+   
 
 
     public void setCase(Position position,char symbole){
