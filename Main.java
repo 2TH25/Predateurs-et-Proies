@@ -4,6 +4,7 @@ public class Main {
       
         Plateau PlateauDeJeu = new Plateau();
         PlateauDeJeu.initialisationUtilisateur();
+        
       
         
         
@@ -29,7 +30,7 @@ public class Main {
                 }
             }
 
-
+            PlateauDeJeu.addTour();
             try {
                 Thread.sleep(2000);}
                 
@@ -37,9 +38,11 @@ public class Main {
                     Ecran.afficherln("Quelque chose ne va pas, le catch a été utilisé");
                 }
                 finally {
-                    Ecran.afficherln("Mise en attente bien réalisée");
+                    Ecran.afficherln("==================================================");
+                    Ecran.afficherln("                     Tour n°",PlateauDeJeu.getTour());
+                    Ecran.afficherln("==================================================");
                 }
-            PlateauDeJeu.addTour();
+            
             PlateauDeJeu.afficherPlateau();
         }
 

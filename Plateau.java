@@ -47,6 +47,9 @@ public class Plateau {
         Ecran.afficherln("Quelle est le nombre de Chasseurs que vous souhaitez ? : ");
         int chasseurs = Clavier.saisirInt();
         this.generationEntites(poules, lapins, renards, chasseurs);
+        Ecran.afficherln("==================================================");
+        Ecran.afficherln("                  Etat initial du Jeu");
+        Ecran.afficherln("==================================================");
         this.afficherPlateau();
         
         
